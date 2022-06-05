@@ -10,5 +10,4 @@ export class BatteryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
 }
