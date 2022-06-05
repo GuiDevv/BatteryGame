@@ -1,19 +1,19 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="ion-rowue">
   <div id="container">
-    <table>
-      <tr>
-        <th><ion-button>Sound</ion-button></th>
-        <th><ion-toggle checked></ion-toggle></th>
-      </tr>
-      <tr>
-        <th><ion-button>Music</ion-button></th>
-        <th><ion-toggle checked></ion-toggle></th>
-      </tr>
-      <tr>
-        <th><ion-button>Language</ion-button></th>
-        <th><ion-toggle checked></ion-toggle></th>
-      </tr>
-    </table>
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-button>Sound</ion-button></ion-col>
+        <ion-col><ion-toggle checked></ion-toggle></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button>Music</ion-button></ion-col>
+        <ion-col><ion-toggle checked></ion-toggle></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button>Language</ion-button></ion-col>
+        <ion-col><ion-toggle checked></ion-toggle></ion-col>
+      </ion-row>
+    </ion-grid>
     <a routerLink="/home"><ion-button>Back</ion-button></a>
   </div>
 </ion-content>
