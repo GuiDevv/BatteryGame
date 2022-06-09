@@ -9,5 +9,8 @@ export class BatteryComponent implements OnInit {
 
   constructor() { }
 
+  Bars = new Array(20);
+  Image:String = "../../assets/icon/BatteryIcon25.png";
+
   ngOnInit() {}
 }

@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'levels',
     loadChildren: () => import('./levels/levels.module').then( m => m.LevelsPageModule)
   },
+  {
+    path: 'game',
+    loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
+  },
 
 ];
 
