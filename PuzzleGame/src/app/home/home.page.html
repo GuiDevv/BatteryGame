@@ -1,9 +1,9 @@
 <ion-content [fullscreen]="true" class="no-scroll">
   <div id="container">
-    <app-battery></app-battery>
+    <app-battery [Size] = "Size"></app-battery>
     <ion-grid>
       <ion-row>
-        <ion-col ><ion-button id="Unique" color="primary"><img src="../../assets/icon/Play.png" style="width: 10vh;"></ion-button></ion-col>
+        <ion-col><a routerLink="/game"><ion-button id="Unique" color="primary"><img src="../../assets/icon/Play.png" style="width: 10vh;"></ion-button></a></ion-col>
       </ion-row>
       <ion-row>
         <ion-col><a routerLink="/levels"><ion-button color="primary"><img src="../../assets/icon/Menu.png" style="width: 7vh"></ion-button></a></ion-col>

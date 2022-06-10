@@ -9,6 +9,8 @@ export class GamePage implements OnInit {
 
   constructor() { }
 
+  Size =  "width: 60vw";
+
   ngOnInit() {
   }
 

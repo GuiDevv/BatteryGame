@@ -7,6 +7,19 @@
   }
   
   app-battery{
+    padding-bottom: 15vw;
+  }
+
+  app-button{
     padding-top: 30vw;
     padding-bottom: 20vw;
+  }
+
+  p {
+    font-size: 7vw;
+    width: 70%;
+    font-weight:100;
+    text-align: center;
+    text-transform: uppercase;
+    color: #428CFF;
   }

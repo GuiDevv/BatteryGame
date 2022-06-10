@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-battery',
@@ -11,6 +11,7 @@ export class BatteryComponent implements OnInit {
 
   Bars = new Array(20);
   Image:String = "../../assets/icon/BatteryIcon25.png";
+  @Input() Size:String;
 
   ngOnInit() {}
 }

@@ -9,4 +9,6 @@ export class HomePage {
 
   constructor() {}
 
+  Size = "width: 70vw";
+
 }
