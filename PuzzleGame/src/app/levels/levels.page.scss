@@ -7,5 +7,9 @@
 
 ion-button{
     height: 8vh;
-    width: 16vw;
+    --border-radius: 15px;
+}
+
+.back{
+    height: 10vh;
 }

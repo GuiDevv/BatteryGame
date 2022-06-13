@@ -1,8 +1,8 @@
-<ion-content overflow-scroll="false">
+<ion-content>
+  <a routerLink="/home"><ion-button>Back</ion-button></a>
   <div id="container">
-    <app-button [UpdateBattery]="UpdateBatteryFunc"></app-button>
-    <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
-    <p [style]="Info">É possível puxar energia até de um ato simples</p>
-    <ion-button [style]="Button"><img src="../../assets/icon/Play.png" style="width: 10vh;"></ion-button>
+    <app-button></app-button>
+    <app-battery [Size]="Size"></app-battery>
+    <p>É possível puxar energia até de um ato simples</p>
   </div>
 </ion-content>
