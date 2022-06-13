@@ -5,4 +5,14 @@ ion-list {
 
 ion-list img {
     padding-bottom: 5px;
+    padding-left: 510px;
+}
+
+#battery {
+    position: fixed;
+    z-index: -1;
+}
+
+#charge {
+    z-index: 1;
 }

@@ -9,9 +9,35 @@ export class BatteryComponent implements OnInit {
 
   constructor() { }
 
-  Bars = new Array(20);
-  Image:String = "../../assets/icon/BatteryIcon25.png";
+  Image:String = "../../assets/icon/BatteryNewIcon.png";
+  Charge:String = "../../assets/icon/Charge0Icon.png";
   @Input() Size:String;
+  @Input() UseBatteryOpacity:Boolean;
+  @Input() UseChargeOpacity:Boolean;
+  Opacity:String = "opacity: 1";
+  ChargeOpacity:String = "opacity: 1";
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.UseBatteryOpacity){
+        this.Opacity = "opacity: 0";
+    }
+    if (this.UseChargeOpacity){
+      this.ChargeOpacity = "opacity: 0";
+  }
+  }
+
+  UpdateBattery(charge:number){
+    if (this.UseBatteryOpacity){
+        this.Opacity = "opacity: " + charge / 7;
+    }      
+
+    if (this.UseChargeOpacity){
+      this.ChargeOpacity = "opacity: " + charge / 7;
+  } 
+
+    if (charge <= 7){
+        this.Charge = "../../assets/icon/Charge" + charge + "Icon.png";
+    }
+      
+  }
 }

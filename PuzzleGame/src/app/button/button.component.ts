@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,7 +10,16 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   Image:String = "../../assets/icon/Button.png";
+  Counter = 0;
+  @Input() UpdateBattery: Function;
 
   ngOnInit() {}
+
+  ButtonClick():void{
+      this.Counter = this.Counter + 1;
+      console.log(this.Counter);
+      this.UpdateBattery();
+  }
+  
 
 }
