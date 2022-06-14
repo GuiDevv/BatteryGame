@@ -3,16 +3,15 @@ import { Button } from 'protractor';
 import { BatteryComponent } from '../battery/battery.component';
 
 @Component({
-  selector: 'app-game',
-  templateUrl: './game.page.html',
-  styleUrls: ['./game.page.scss'],
+  selector: 'app-game3',
+  templateUrl: './game3.page.html',
+  styleUrls: ['./game3.page.scss'],
 })
-export class GamePage implements OnInit {
-
+export class Game3Page implements OnInit {
   constructor() { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
-
+  
   //Toda Game page precisa ter
   Size =  "width: 60vw";
   UseBatteryOpacity = false;
@@ -23,7 +22,6 @@ export class GamePage implements OnInit {
   batteryCount = 0;
 
   ngOnInit() {
-    
   }
 
   get UpdateBatteryFunc() {
@@ -49,5 +47,4 @@ export class GamePage implements OnInit {
     this.Button = "display: block;"
     this.Info = "display: none;"
   }
-
 }

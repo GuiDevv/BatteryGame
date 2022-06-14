@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'game',
     loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
   },
+  {
+    path: 'game3',
+    loadChildren: () => import('./game3/game3.module').then( m => m.Game3PageModule)
+  },
 
 ];
 
