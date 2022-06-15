@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 20vh;
+  }
+  
+  app-battery{
+    padding-bottom: 15vw;
+  }
+
+  app-button{
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+  }
+
+  ion-button {
+    width: 45vw;
+    height: 10vh;
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 7vw;
+    width: 70%;
+    font-weight:100;
+    text-align: center;
+    text-transform: uppercase;
+    color: #428CFF;
+  }
+  

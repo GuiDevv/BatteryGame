@@ -11,14 +11,32 @@ export class ButtonComponent implements OnInit {
 
   Image:String = "../../assets/icon/Button.png";
   Counter = 0;
-  @Input() UpdateBattery: Function;
+  timeOutHandler;
+  @Input() PressedFunction: Function;
+  @Input() ReleaseFunction: Function;
+  @Input() UsePressedButton: boolean = false;
 
   ngOnInit() {}
 
   ButtonClick():void{
-      this.Counter = this.Counter + 1;
-      console.log(this.Counter);
-      this.UpdateBattery();
+      if(this.UsePressedButton){
+          this.timeOutHandler = setInterval(() => {
+          this.PressedFunction();
+        }, 1000);
+      }
+      else{
+        this.Counter = this.Counter + 1;
+        console.log(this.Counter);
+        this.PressedFunction();
+      }
+      
+  }
+
+  ButtonReleased():void{
+    if (this.timeOutHandler) {
+      clearTimeout(this.timeOutHandler);
+      this.timeOutHandler = null;
+    }
   }
   
 
