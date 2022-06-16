@@ -11,14 +11,20 @@
     padding-bottom: 15vw;
   }
 
-  app-button{
-    padding-top: 15vh;
+  app-lever{
+    padding-top: 7vh;
     padding-bottom: 10vh;
   }
 
   ion-button {
     width: 45vw;
     height: 10vh;
+    --border-radius: 15px;
+  }
+
+  #back {
+    width: 30vw;
+    height: 30vw;
   }
 
   p {

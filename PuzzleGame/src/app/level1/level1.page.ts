@@ -28,7 +28,7 @@ export class Level1Page implements OnInit {
 
   get UpdateBatteryFunc() {
     return this.UpdateBattery.bind(this);
-}
+  }
 
   UpdateBattery() {
 

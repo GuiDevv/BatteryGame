@@ -1,10 +1,9 @@
 <ion-content>
   <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 10vh;"></ion-button></a>
   <div id="container">
-    <app-button [PressedFunction]="UpdateBatteryFunc"></app-button>
+    <app-lever></app-lever>
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Tudo começa com um Click</p>
     <a routerLink="/level2"><ion-button [style]="Button"><img src="../../assets/icon/Play.png" style="width: 10vh;"></ion-button></a>
   </div>
   </ion-content>
-  

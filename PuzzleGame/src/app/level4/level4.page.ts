@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Button } from 'protractor';
 import { BatteryComponent } from '../battery/battery.component';
+import { Gesture, GestureController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-game3',
-  templateUrl: './game3.page.html',
-  styleUrls: ['./game3.page.scss'],
+  selector: 'app-level4',
+  templateUrl: './level4.page.html',
+  styleUrls: ['./level4.page.scss'],
 })
-export class Game3Page implements OnInit {
-  constructor() { }
+export class Level4Page implements OnInit {
+
+  constructor(private gestureCtrl: GestureController) { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
-  
+
   //Toda Game page precisa ter
   Size =  "width: 60vw";
   UseBatteryOpacity = false;
@@ -30,15 +31,8 @@ export class Game3Page implements OnInit {
 
   UpdateBattery() {
 
-    this.batteryCount = this.batteryCount + 1;
-
-    if (this.batteryCount != 7){     
-      this.battery.UpdateBattery(this.batteryCount);
-    }
-    else {
-      this.battery.UpdateBattery(this.batteryCount);
+    this.battery.UpdateBattery(7);
       this.OnLevelCompleted();
-    }
 
   }
 
