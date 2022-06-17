@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
-import { Gesture, GestureController } from '@ionic/angular';
+import { Button } from 'protractor';
 
 @Component({
   selector: 'app-level4',
@@ -9,7 +9,7 @@ import { Gesture, GestureController } from '@ionic/angular';
 })
 export class Level4Page implements OnInit {
 
-  constructor(private gestureCtrl: GestureController) { }
+  constructor() { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -22,6 +22,13 @@ export class Level4Page implements OnInit {
   Info = "display: block;"
   batteryCount = 0;
 
+  counter = 0;
+  timeOutHandler;
+  name:String;
+
+  leverLevel:number;
+  finished:boolean = true;
+
   ngOnInit() {
   }
 
@@ -30,15 +37,20 @@ export class Level4Page implements OnInit {
   }
 
   UpdateBattery() {
-
-    this.battery.UpdateBattery(7);
+    if(this.finished)
+    this.battery.UpdateBattery(this.leverLevel);
+    if(this.leverLevel === 7)
       this.OnLevelCompleted();
-
   }
 
   OnLevelCompleted() {
     this.LevelCompleted = true;
     this.Button = "display: block;"
     this.Info = "display: none;"
+    this.finished = false;
+  }
+
+  sliderLastChange() {
+    this.UpdateBattery();
   }
 }
