@@ -1,7 +1,8 @@
 {
   "name": "PuzzleGame",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
