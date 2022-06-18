@@ -1,6 +1,6 @@
 <ion-content>
   <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 5vh;"></ion-button></a>
-  <ion-range min="0" max="7" [(ngModel)]="leverLevel" (ionBlur)="sliderLastChange()" step="1" value="0" snaps color="primary">
+  <ion-range min="0" max="20" [(ngModel)]="leverLevel" (ionBlur)="sliderLastChange()" step="1" value="0" snaps color="primary">
     <ion-icon slot="start" size="small" color="primary"></ion-icon>
     <ion-icon slot="end" color="primary"></ion-icon>
   </ion-range>

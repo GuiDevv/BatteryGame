@@ -31,7 +31,8 @@ export class Level6Page implements OnInit {
   finished:boolean = true;
 
   ngOnInit() {
-    this.rightCharge = 4;
+    this.rightCharge = Math.ceil(Math.random() * (20 - 1) + 1);
+    console.log(this.rightCharge);
   }
 
   get UpdateBatteryFunc() {
@@ -40,11 +41,14 @@ export class Level6Page implements OnInit {
 
   UpdateBattery() {
     if(this.finished){
-      if(this.rightCharge >= this.leverLevel){
+      if(this.rightCharge >= this.leverLevel && this.rightCharge - this.leverLevel <= 7){
         this.battery.UpdateBattery(7 - (this.rightCharge - this.leverLevel));
       }
-      else{
+      else if(this.rightCharge <= this.leverLevel && this.leverLevel - this.rightCharge <= 7){
         this.battery.UpdateBattery(7 - (this.leverLevel - this.rightCharge));
+      }
+      else{
+        this.battery.UpdateBattery(0);
       }
     }
     if(this.leverLevel === this.rightCharge)
