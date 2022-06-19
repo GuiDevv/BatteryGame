@@ -9,6 +9,44 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+ @media screen and (orientation: portrait) {
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+      }
+
+    #back {
+        width: 15vw;
+        height: 15vw;
+        --border-radius: 3px;
+        margin-left: 3vw;
+        margin-top: 3vw;
+      }
+
+    app-battery{
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+      }
+
+    ion-button {
+        width: 35vw;
+        height: 8vh;
+        --border-radius: 5px;
+      }
+
+    p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 7vw;
+        width: 70%;
+        font-weight:100;
+        text-align: center;
+        text-transform: uppercase;
+        color: #428CFF;
+      }
+ }
 /* Core CSS required for Ionic components to work properly */
 
 @import "~@ionic/angular/css/core.css";

@@ -24,6 +24,7 @@ export class Level5Page implements OnInit {
   UseChargeOpacity = true;
   LevelCompleted = false;
   Button = "display: none;"
+  Next = "style: width: 5vh;"
   Info = "display: block;"
   batteryCount = 0;
 
@@ -62,9 +63,11 @@ export class Level5Page implements OnInit {
   OnScreenRotated(){
     if (this.getCurrentScreenOrientation() == "portrait-primary"){
       this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
     }
     else{
       this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
     }
     
     this.UpdateBattery();

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
-
+import { Flashlight } from '@awesome-cordova-plugins/flashlight/ngx';
 
 @Component({
   selector: 'app-level7',
@@ -9,7 +9,8 @@ import { BatteryComponent } from '../battery/battery.component';
 })
 export class Level7Page implements OnInit {
 
-  constructor() { 
+  constructor(private flashlight: Flashlight) { 
+    this.flashlight.switchOn().then.bind("UpdateBattery");
   }
 
   @ViewChild (BatteryComponent) battery:BatteryComponent;

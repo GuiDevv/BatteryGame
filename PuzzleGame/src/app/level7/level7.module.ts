@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BatteryComponent } from '../battery/battery.component';
 import { Level7PageRoutingModule } from './level7-routing.module';
-import { Flashlight } from '@awesome-cordova-plugins/flashlight';
+import { Flashlight } from '@awesome-cordova-plugins/flashlight/ngx';
 
 import { Level7Page } from './level7.page';
 
@@ -17,6 +17,7 @@ import { Level7Page } from './level7.page';
     Level7PageRoutingModule
   ],
   declarations: [Level7Page,  BatteryComponent],
+  providers: [Flashlight],
 
 })
 export class Level7PageModule {}

@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
       if(this.UsePressedButton){
           this.timeOutHandler = setInterval(() => {
           this.PressedFunction();
-        }, 1000);
+        }, 500);
       }
       else{
         this.Counter = this.Counter + 1;
