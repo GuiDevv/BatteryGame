@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-levels',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LevelsPage implements OnInit {
 
-  constructor() { }
+  levelCompleted: boolean[];
+
+  constructor(private levelService:LevelService) { }
 
   ngOnInit() {
+    this.getCompleted;
   }
 
+  getCompleted(){
+    this.levelCompleted = this.levelService.getCompleted();
+  }
 }

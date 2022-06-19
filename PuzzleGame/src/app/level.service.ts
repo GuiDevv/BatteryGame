@@ -8,9 +8,13 @@ export class LevelService {
   currentLevel: number;
   hints = HINTS;
   currentHint;
+  levelCompleted: boolean[];
+
   constructor() {
     this.currentLevel = 1;
-    this.currentHint = this.hints[0]
+    this.currentHint = this.hints[0];
+
+    this.levelCompleted = [true,false,false,false,false,false,false,false,false];
   }
 
   setCurrentHint(level){
@@ -28,5 +32,9 @@ export class LevelService {
   setCurrentLevel(level){
     this.currentLevel = level;
     this.setCurrentHint(level);
+  }
+
+  getCompleted(){
+    return this.levelCompleted;
   }
 }
