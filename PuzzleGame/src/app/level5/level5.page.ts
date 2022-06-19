@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
 import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-level5',
@@ -9,7 +10,7 @@ import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/n
 })
 export class Level5Page implements OnInit {
 
-  constructor(private screenOrientation: ScreenOrientation) { 
+  constructor(private levelService:LevelService, private screenOrientation: ScreenOrientation) { 
     this.screenOrientation.onChange().subscribe(
       () => {
           this.OnScreenRotated();
@@ -71,6 +72,11 @@ export class Level5Page implements OnInit {
     }
     
     this.UpdateBattery();
+  }
+
+  SetCurrentLevel(level) {
+    this.levelService.setCurrentLevel(level);
+    console.log(level);
   }
  
 }

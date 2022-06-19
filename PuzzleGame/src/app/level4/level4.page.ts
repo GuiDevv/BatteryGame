@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
 import { Button } from 'protractor';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-level4',
@@ -9,7 +10,7 @@ import { Button } from 'protractor';
 })
 export class Level4Page implements OnInit {
 
-  constructor() { }
+  constructor(private levelService:LevelService) { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -52,5 +53,10 @@ export class Level4Page implements OnInit {
 
   sliderLastChange() {
     this.UpdateBattery();
+  }
+
+  SetCurrentLevel(level) {
+    this.levelService.setCurrentLevel(level);
+    console.log(level);
   }
 }

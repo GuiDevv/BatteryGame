@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Button } from 'protractor';
 import { BatteryComponent } from '../battery/battery.component';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-level2',
@@ -9,7 +10,7 @@ import { BatteryComponent } from '../battery/battery.component';
 })
 export class Level2Page implements OnInit {
 
-  constructor() { }
+  constructor(private levelService:LevelService) { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -50,4 +51,8 @@ export class Level2Page implements OnInit {
     this.Info = "display: none;"
   }
 
+  SetCurrentLevel(level) {
+    this.levelService.setCurrentLevel(level);
+    console.log(level);
+  }
 }

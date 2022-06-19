@@ -3,6 +3,7 @@ import { count } from 'console';
 import { BatteryComponent } from '../battery/battery.component';
 import { interval } from 'rxjs';
 import { ButtonComponent } from '../button/button.component';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-level3',
@@ -11,7 +12,7 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class Level3Page implements OnInit {
 
-  constructor() { }
+  constructor(private levelService:LevelService) { }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -65,6 +66,10 @@ export class Level3Page implements OnInit {
 
   PressFunction() {
     this.UpdateBattery();
-}
+  }
 
+  SetCurrentLevel(level) {
+    this.levelService.setCurrentLevel(level);
+    console.log(level);
+  }
 }
