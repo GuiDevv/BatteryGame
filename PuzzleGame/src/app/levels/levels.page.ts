@@ -8,15 +8,15 @@ import { LevelService } from '../level.service';
 })
 export class LevelsPage implements OnInit {
 
-  levelCompleted: boolean[];
+  levelCompleted1;
 
   constructor(private levelService:LevelService) { }
 
   ngOnInit() {
-    this.getCompleted;
+    this.levelCompleted1 = this.levelService.getCompleted(0);
   }
 
   getCompleted(){
-    this.levelCompleted = this.levelService.getCompleted();
+    this.levelCompleted1 = this.levelService.getCompleted(0);
   }
 }

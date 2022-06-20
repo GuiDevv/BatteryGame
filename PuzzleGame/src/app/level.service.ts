@@ -34,7 +34,7 @@ export class LevelService {
     this.setCurrentHint(level);
   }
 
-  getCompleted(){
-    return this.levelCompleted;
+  getCompleted(level){
+    return this.levelCompleted[level];
   }
 }

@@ -3,35 +3,44 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <a routerLink="/level1"><ion-button>1</ion-button></a>
+          <a routerLink="/level1" *ngIf="levelCompleted1"><ion-button>1</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted1">1</ion-button>
         </ion-col>
         <ion-col>
-          <a routerLink="/level2"><ion-button>2</ion-button></a>
+          <a routerLink="/level2" *ngIf="levelCompleted2"><ion-button>1</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted2">2</ion-button>
         </ion-col>
         <ion-col>
-          <a routerLink="/level3"><ion-button>3</ion-button></a>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/level4"><ion-button>4</ion-button></a>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level5"><ion-button>5</ion-button></a>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level6"><ion-button>6</ion-button></a>
+          <a routerLink="/level3" *ngIf="levelCompleted3"><ion-button>3</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted3">3</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <a routerLink="/level7"><ion-button>7</ion-button></a>
+          <a routerLink="/level4" *ngIf="levelCompleted4"><ion-button>4</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted4">4</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button>8</ion-button>
+          <a routerLink="/level5" *ngIf="levelCompleted5"><ion-button>5</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted5">5</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button>9</ion-button>
+          <a routerLink="/level6" *ngIf="levelCompleted6"><ion-button>6</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted6">6</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <a routerLink="/level7" *ngIf="levelCompleted6"><ion-button>7</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted6">7</ion-button>
+        </ion-col>
+        <ion-col>
+          <a routerLink="/level7" *ngIf="levelCompleted8"><ion-button>8</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted8">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <a routerLink="/level7" *ngIf="levelCompleted9"><ion-button>9</ion-button></a>
+          <ion-button color="medium" *ngIf="!levelCompleted9">9</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
