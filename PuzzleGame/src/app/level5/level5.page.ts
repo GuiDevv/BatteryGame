@@ -40,7 +40,7 @@ export class Level5Page implements OnInit {
   UpdateBattery() {
 
     this.batteryCount = this.batteryCount + 1;
-
+    
     if (this.batteryCount != 7){     
       this.battery.UpdateBattery(this.batteryCount);
     }
@@ -55,6 +55,7 @@ export class Level5Page implements OnInit {
     this.LevelCompleted = true;
     this.Button = "display: block;"
     this.Info = "display: none;"
+    console.log("Venci");
   }
 
   getCurrentScreenOrientation(){
@@ -65,10 +66,12 @@ export class Level5Page implements OnInit {
     if (this.getCurrentScreenOrientation() == "portrait-primary"){
       this.Size =  "width: 60vw";
       this.Next = "width: 5vh";
+      console.debug("-- Portrait " + this.Size);
     }
     else{
       this.Size =  "width: 60vh";
       this.Next = "width: 5vw";
+      console.debug("-- Landscape " + this.Size);
     }
     
     this.UpdateBattery();

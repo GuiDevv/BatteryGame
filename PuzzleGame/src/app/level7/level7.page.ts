@@ -10,7 +10,10 @@ import { Flashlight } from '@awesome-cordova-plugins/flashlight/ngx';
 export class Level7Page implements OnInit {
 
   constructor(private flashlight: Flashlight) { 
-    this.flashlight.switchOn().then.bind("UpdateBattery");
+    document.addEventListener("backbutton", function() {
+      // pass exitApp as callbacks to the switchOff method
+      this.getFlashlightMode();
+    }, false);
   }
 
   @ViewChild (BatteryComponent) battery:BatteryComponent;
@@ -51,4 +54,9 @@ export class Level7Page implements OnInit {
     this.Info = "display: none;"
   }
 
+  getFlashlightMode(){
+    return this.flashlight.isSwitchedOn();
+    console.log("Ligada");
+    this.Button = "display: block;"
+  }
 }

@@ -27,6 +27,7 @@ export class BatteryComponent implements OnInit {
   }
 
   UpdateBattery(charge:number){
+    console.log(charge);
     if (this.UseBatteryOpacity){
         this.Opacity = "opacity: " + charge / 7;
     }      
