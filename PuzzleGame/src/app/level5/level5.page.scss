@@ -27,9 +27,22 @@
     width: 15vh;
     height: 15vh;
     --border-radius: 3px;
-    margin-left: 3vh;
     margin-top: 3vh;
   }
+
+  #hint {
+    width: 15vh;
+    height: 15vh;
+    --border-radius: 3px;
+    margin-left: 170vh;
+    margin-top: 3vh;
+}
+
+.Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
   ion-button {
     width: 35vh;

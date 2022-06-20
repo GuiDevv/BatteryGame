@@ -6,32 +6,7 @@
   }
 
   app-button{
-    padding-top: 1vh;
-    padding-bottom: 5vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
   }
 
-  ion-button {
-    width: 45vw;
-    height: 10vh;
-    --border-radius: 15px;
-  }
-
-  #back {
-    width: 20vw;
-    height: 20vw;
-  }
-
-  #hint {
-    width: 20vw;
-    height: 20vw;
-  }
-
-  p {
-    font-family: 'Nunito', sans-serif;
-    font-size: 7vw;
-    width: 70%;
-    font-weight:100;
-    text-align: center;
-    text-transform: uppercase;
-    color: #428CFF;
-  }

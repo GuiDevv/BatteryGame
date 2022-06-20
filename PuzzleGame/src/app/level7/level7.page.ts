@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
 import { Flashlight } from '@awesome-cordova-plugins/flashlight/ngx';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-level7',
@@ -9,7 +10,7 @@ import { Flashlight } from '@awesome-cordova-plugins/flashlight/ngx';
 })
 export class Level7Page implements OnInit {
 
-  constructor(private flashlight: Flashlight) { 
+  constructor(private levelService:LevelService, private flashlight: Flashlight) { 
     document.addEventListener("backbutton", function() {
       // pass exitApp as callbacks to the switchOff method
       this.getFlashlightMode();
@@ -58,5 +59,10 @@ export class Level7Page implements OnInit {
     return this.flashlight.isSwitchedOn();
     console.log("Ligada");
     this.Button = "display: block;"
+  }
+
+  SetCurrentLevel(level) {
+    this.levelService.setCurrentLevel(level);
+    console.log(level);
   }
 }

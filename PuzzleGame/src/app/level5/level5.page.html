@@ -1,6 +1,9 @@
 <ion-content>
-  <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 10vh;"></ion-button></a>
-  <a routerLink="/hint"><ion-button id="hint" (click)="SetCurrentLevel(5)"><img src="../../assets/icon/Hint.png" style="width: 10vh;"></ion-button></a>
+  <div class="Header">
+    <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 10vh;"></ion-button></a>
+    <a routerLink="/hint"><ion-button id="hint" (click)="SetCurrentLevel(5)"><img src="../../assets/icon/Hint.png" style="width: 10vh;"></ion-button></a>
+  </div>  
+  
   <div id="container">
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Gire</p>

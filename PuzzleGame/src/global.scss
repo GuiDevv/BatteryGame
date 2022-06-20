@@ -25,7 +25,6 @@
         width: 15vw;
         height: 15vw;
         --border-radius: 3px;
-        margin-left: 3vw;
         margin-top: 3vw;
       }
 
@@ -35,6 +34,12 @@
         --border-radius: 3px;
         margin-left: 53vw;
         margin-top: 3vw;
+    }
+
+    .Header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
     }
 
     app-battery{
