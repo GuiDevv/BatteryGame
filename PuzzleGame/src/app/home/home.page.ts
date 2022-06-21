@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LevelService } from '../level.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private levelService:LevelService) {}
 
   Size = "width: 70vw";
-
 }

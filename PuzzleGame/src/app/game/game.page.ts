@@ -17,7 +17,7 @@ export class GamePage implements OnInit {
   Size =  "width: 60vw";
   UseBatteryOpacity = false;
   UseChargeOpacity = true;
-  LevelCompleted = false;
+  levelUnlocked = false;
   Button = "display: none;"
   Info = "display: block;"
   batteryCount = 0;
@@ -39,13 +39,13 @@ export class GamePage implements OnInit {
     }
     else {
       this.battery.UpdateBattery(this.batteryCount);
-      this.OnLevelCompleted();
+      this.OnlevelUnlocked();
     }
 
   }
 
-  OnLevelCompleted() {
-    this.LevelCompleted = true;
+  OnlevelUnlocked() {
+    this.levelUnlocked = true;
     this.Button = "display: block;"
     this.Info = "display: none;"
   }
