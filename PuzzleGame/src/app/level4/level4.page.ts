@@ -40,7 +40,7 @@ export class Level4Page implements OnInit {
   UpdateBattery() {
     if(this.finished)
     this.battery.UpdateBattery(this.leverLevel);
-    if(this.leverLevel === 7)
+    if(this.leverLevel === 9)
       this.OnLevelCompleted();
   }
 

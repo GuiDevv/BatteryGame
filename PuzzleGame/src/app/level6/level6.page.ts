@@ -44,11 +44,11 @@ export class Level6Page implements OnInit {
 
   UpdateBattery() {
     if(this.finished){
-      if(this.rightCharge >= this.leverLevel && this.rightCharge - this.leverLevel <= 7){
-        this.battery.UpdateBattery(7 - (this.rightCharge - this.leverLevel));
+      if(this.rightCharge >= this.leverLevel && this.rightCharge - this.leverLevel <= 9){
+        this.battery.UpdateBattery(9 - (this.rightCharge - this.leverLevel));
       }
-      else if(this.rightCharge <= this.leverLevel && this.leverLevel - this.rightCharge <= 7){
-        this.battery.UpdateBattery(7 - (this.leverLevel - this.rightCharge));
+      else if(this.rightCharge <= this.leverLevel && this.leverLevel - this.rightCharge <= 9){
+        this.battery.UpdateBattery(9 - (this.leverLevel - this.rightCharge));
       }
       else{
         this.battery.UpdateBattery(0);

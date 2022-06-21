@@ -29,14 +29,14 @@ export class BatteryComponent implements OnInit {
   UpdateBattery(charge:number){
     console.log(charge);
     if (this.UseBatteryOpacity){
-        this.Opacity = "opacity: " + charge / 7;
+        this.Opacity = "opacity: " + charge / 9;
     }      
 
     if (this.UseChargeOpacity){
-      this.ChargeOpacity = "opacity: " + charge / 7;
+      this.ChargeOpacity = "opacity: " + charge / 9;
   } 
 
-    if (charge <= 7){
+    if (charge <= 9){
         this.Charge = "../../assets/icon/Charge" + charge + "Icon.png";
     }
       

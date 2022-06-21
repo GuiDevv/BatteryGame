@@ -33,7 +33,7 @@ export class Level1Page implements OnInit {
 
   UpdateBattery() {
 
-    this.battery.UpdateBattery(7);
+    this.battery.UpdateBattery(9);
       this.OnLevelCompleted();
 
   }

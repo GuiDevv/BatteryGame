@@ -27,7 +27,7 @@ export class Level9Page implements OnInit {
   rightCharge:number;
 
   ngOnInit() {
-    this.rightCharge = Math.ceil(Math.random() * (7 - 1) + 1);
+    this.rightCharge = Math.ceil(Math.random() * (9 - 1) + 1);
   }
 
   get UpdateBatteryFunc() {
@@ -38,9 +38,9 @@ export class Level9Page implements OnInit {
     if(this.leverLevel === this.rightCharge){
       this.batteryCount++;
       this.battery.UpdateBattery(this.batteryCount);
-      this.rightCharge = Math.ceil(Math.random() * (7 - 1) + 1);
+      this.rightCharge = Math.ceil(Math.random() * (9 - 1) + 1);
     }
-    if(this.batteryCount >= 7){
+    if(this.batteryCount >= 9){
       this.OnLevelCompleted();
     }
   }

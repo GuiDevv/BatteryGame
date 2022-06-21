@@ -41,7 +41,7 @@ export class Level8Page implements OnInit {
 
     this.batteryCount = Math.ceil(number / 10);
     
-    if (this.batteryCount != 7){     
+    if (this.batteryCount != 9){     
       this.battery.UpdateBattery(this.batteryCount);
     }
     else {

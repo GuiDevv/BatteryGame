@@ -35,7 +35,7 @@ export class Level2Page implements OnInit {
 
     this.batteryCount = this.batteryCount + 1;
 
-    if (this.batteryCount != 7){     
+    if (this.batteryCount != 9){     
       this.battery.UpdateBattery(this.batteryCount);
     }
     else {
