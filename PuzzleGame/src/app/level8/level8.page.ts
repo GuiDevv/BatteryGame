@@ -62,6 +62,9 @@ export class Level8Page implements OnInit {
     this.levelService.setCurrentLevel(level);
     console.log(level);
   }
- 
+  
+  UnlockLevel(level){
+    this.levelService.unlockLevel(level);
+  }
 }
 
