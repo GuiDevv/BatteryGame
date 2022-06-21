@@ -32,7 +32,7 @@ export class Level6Page implements OnInit {
   finished:boolean = true;
 
   ngOnInit() {
-    this.rightCharge = Math.ceil(Math.random() * (20 - 1) + 1);
+    this.rightCharge = Math.ceil(Math.random() * (10 - 1) + 1);
     console.log(this.rightCharge);
   }
 
@@ -70,5 +70,9 @@ export class Level6Page implements OnInit {
   SetCurrentLevel(level) {
     this.levelService.setCurrentLevel(level);
     console.log(level);
+  }
+
+  UnlockLevel(level){
+    this.levelService.unlockLevel(level);
   }
 }

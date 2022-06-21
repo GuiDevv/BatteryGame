@@ -7,7 +7,7 @@
   <div id="container">
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Agite as Coisas</p>
-    <a routerLink="/level8"><ion-button [style]="Button"><img src="../../assets/icon/Play.png" style="width: 5vh;"></ion-button></a>
+    <a routerLink="/level8"><ion-button [style]="Button" (click)="UnlockLevel(8)"><img src="../../assets/icon/Play.png" style="width: 5vh;"></ion-button></a>
   </div>
   </ion-content>
   
