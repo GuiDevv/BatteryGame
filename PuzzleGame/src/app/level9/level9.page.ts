@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BatteryComponent } from '../battery/battery.component';
 import { Button } from 'protractor';
+import { BatteryComponent } from '../battery/battery.component';
 import { LevelService } from '../level.service';
 
 @Component({
-  selector: 'app-level6',
-  templateUrl: './level6.page.html',
-  styleUrls: ['./level6.page.scss'],
+  selector: 'app-level9',
+  templateUrl: './level9.page.html',
+  styleUrls: ['./level9.page.scss'],
 })
-export class Level6Page implements OnInit {
+export class Level9Page implements OnInit {
 
   constructor(private levelService:LevelService) { }
 
@@ -23,16 +23,11 @@ export class Level6Page implements OnInit {
   Info = "display: block;"
   batteryCount = 0;
 
-  counter = 0;
-  timeOutHandler;
-  name:String;
-
+  leverLevel;
   rightCharge:number;
-  leverLevel:number;
-  finished:boolean = true;
 
   ngOnInit() {
-    this.rightCharge = Math.ceil(Math.random() * (10 - 1) + 1);
+    this.rightCharge = Math.ceil(Math.random() * (7 - 1) + 1);
   }
 
   get UpdateBatteryFunc() {
@@ -40,30 +35,20 @@ export class Level6Page implements OnInit {
   }
 
   UpdateBattery() {
-    if(this.finished){
-      if(this.rightCharge >= this.leverLevel && this.rightCharge - this.leverLevel <= 7){
-        this.battery.UpdateBattery(7 - (this.rightCharge - this.leverLevel));
-      }
-      else if(this.rightCharge <= this.leverLevel && this.leverLevel - this.rightCharge <= 7){
-        this.battery.UpdateBattery(7 - (this.leverLevel - this.rightCharge));
-      }
-      else{
-        this.battery.UpdateBattery(0);
-      }
+    if(this.leverLevel === this.rightCharge){
+      this.batteryCount++;
+      this.battery.UpdateBattery(this.batteryCount);
+      this.rightCharge = Math.ceil(Math.random() * (7 - 1) + 1);
     }
-    if(this.leverLevel === this.rightCharge)
+    if(this.batteryCount >= 7){
       this.OnLevelCompleted();
+    }
   }
 
   OnLevelCompleted() {
     this.LevelCompleted = true;
     this.Button = "display: block;"
     this.Info = "display: none;"
-    this.finished = false;
-  }
-
-  sliderLastChange() {
-    this.UpdateBattery();
   }
 
   SetCurrentLevel(level) {
