@@ -1,19 +1,21 @@
 <ion-content [fullscreen]="ion-rowue">
   <div id="container">
+    <div id="Options">
       <div id="sound">
-      <ion-button>Sound</ion-button>
+      <p>Sound</p>
       <ion-range min="0" max="10" step="1" value="0" snaps color="primary">
         <ion-icon slot="start" size="small" color="primary"></ion-icon>
         <ion-icon slot="end" color="primary"></ion-icon>
       </ion-range>
       </div>
       <div id="music">
-      <ion-button>Music</ion-button>
+      <p>Music</p>
       <ion-range min="0" max="10" step="1" value="0" snaps color="primary">
         <ion-icon slot="start" size="small" color="primary"></ion-icon>
         <ion-icon slot="end" color="primary"></ion-icon>
       </ion-range>
       </div>
-    <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 20vw;"></ion-button></a>
+    </div>
+    <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" style="width: 10vw;"></ion-button></a>
   </div>
 </ion-content>

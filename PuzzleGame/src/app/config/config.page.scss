@@ -3,15 +3,40 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#Options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 50%;
 }
 
 div{
     display: flex;
-    width: 95vw;
+    flex-direction: column;
+    width: 80vw;
+    padding-bottom: 5vh;
+}
+
+div p {
+    width: 25vw;
+    text-decoration:dashed solid;
+    font-size:larger;
+    text-align: center;
+    align-self: center;
+}
+
+div ion-range {
+    padding: 0;
 }
 
 #back{
-    height: 10vh;
-    width: 70vw;
+    position: botton;
+    height: 8vh;
+    width: 40vw;
 }
 
