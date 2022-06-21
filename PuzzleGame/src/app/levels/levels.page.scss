@@ -14,10 +14,12 @@ ion-button{
     height: 10vh;
     width: 10vh;
     padding: 2vw;
-    --border-radius: 15px;
+    --border-radius: 3px;
 }
 
 #back{
-    height: 10vh;
-    width: 70vw;
+    width: 60vw;
+    height: 25vw;
+    --border-radius: 3px;
+    margin-top: 3vw;
 }
