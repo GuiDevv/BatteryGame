@@ -1,26 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
-import { Shake } from '@ionic-native/shake/ngx';
-import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
-import { Platform } from '@ionic/angular';
 import { LevelService } from '../level.service';
+import { BatteryStatus } from '@ionic-native/battery-status/ngx';
 
 @Component({
-  selector: 'app-level7',
-  templateUrl: './level7.page.html',
-  styleUrls: ['./level7.page.scss'],
+  selector: 'app-level8',
+  templateUrl: './level8.page.html',
+  styleUrls: ['./level8.page.scss'],
 })
-export class Level7Page implements OnInit {
+export class Level8Page implements OnInit {
 
-  constructor(private levelService:LevelService, private shake:Shake, private plataform:Platform, private vibration: Vibration) { 
-    this.plataform.ready().then( () => {
-      this.shake.startWatch(this.sensitive).subscribe( data => {
-        this.UpdateBattery();
-        //this.vibration.vibrate(1000);
-        navigator.vibrate(1000);
-      })
-    })
-  }
+  constructor(private levelService:LevelService, private batteryStatus:BatteryStatus) { 
+    this.batteryStatus.onChange().subscribe(status => {
+     // console.log(status.level, status.isPlugged);
+      this.UpdateBattery(status.level);
+  })
+}
 
   @ViewChild (BatteryComponent) battery:BatteryComponent;
 
@@ -30,22 +25,22 @@ export class Level7Page implements OnInit {
   UseChargeOpacity = true;
   LevelCompleted = false;
   Button = "display: none;"
+  Next = "style: width: 5vh;"
   Info = "display: block;"
   batteryCount = 0;
 
-  sensitive = 40;
-
   ngOnInit() {
+
   }
 
   get UpdateBatteryFunc() {
     return this.UpdateBattery.bind(this);
-  }
+}
 
-  UpdateBattery() {
+  UpdateBattery(number) {
 
-    this.batteryCount = this.batteryCount + 1;
-
+    this.batteryCount = number / 10;
+    
     if (this.batteryCount != 7){     
       this.battery.UpdateBattery(this.batteryCount);
     }
@@ -60,14 +55,13 @@ export class Level7Page implements OnInit {
     this.LevelCompleted = true;
     this.Button = "display: block;"
     this.Info = "display: none;"
+    console.log("Venci");
   }
 
   SetCurrentLevel(level) {
     this.levelService.setCurrentLevel(level);
     console.log(level);
   }
-
-  UnlockLevel(level){
-    this.levelService.unlockLevel(level);
-  }
+ 
 }
+
