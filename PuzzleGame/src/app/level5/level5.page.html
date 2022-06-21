@@ -7,7 +7,7 @@
   <div id="container">
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Gire</p>
-    <a routerLink="/level6"><ion-button [style]="Button"><img src="../../assets/icon/Play.png" [style]="Next" (click)="UnlockLevel(6)"></ion-button></a>
+    <a routerLink="/level6"><ion-button [style]="Button" (click)="UnlockLevel(6)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
   </div>
   </ion-content>
   

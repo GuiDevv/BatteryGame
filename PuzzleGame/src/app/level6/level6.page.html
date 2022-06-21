@@ -4,7 +4,7 @@
   <a routerLink="/hint"><ion-button id="hint" (click)="SetCurrentLevel(6)"><img src="../../assets/icon/Hint.png" style="width: 10vh;"></ion-button></a>
   </div>  
   
-  <ion-range min="0" max="10" [(ngModel)]="leverLevel" (ionBlur)="sliderLastChange()" step="1" value="0" snaps color="primary">
+  <ion-range min="0" max="10" [(ngModel)]="leverLevel" (ionKnobMoveEnd)="sliderLastChange()" step="1" value="0" snaps color="primary">
     <ion-icon slot="start" size="small" color="primary"></ion-icon>
     <ion-icon slot="end" color="primary"></ion-icon>
   </ion-range>

@@ -3,6 +3,9 @@ import { BatteryComponent } from '../battery/battery.component';
 import { Button } from 'protractor';
 import { LevelService } from '../level.service';
 
+import { RangeCustomEvent } from '@ionic/angular';
+import { RangeValue } from '@ionic/core';
+
 @Component({
   selector: 'app-level6',
   templateUrl: './level6.page.html',
