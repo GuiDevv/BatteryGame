@@ -11,6 +11,6 @@
   <div id="container">
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Agora deve ir até o fim</p>
-    <a routerLink="/level5"><ion-button [style]="Button" (click)="UnlockLevel(5)"><img src="../../assets/icon/Play.png" style="width: 5vh;"></ion-button></a>
+    <a routerLink="/level5"><ion-button [style]="Button" (click)="UnlockLevel(5)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
   </div>
   </ion-content>

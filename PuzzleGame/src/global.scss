@@ -48,6 +48,10 @@
         padding-bottom: 15vh;
       }
 
+      app-button {
+        width: 20vw;
+      }
+
     ion-button {
         width: 35vw;
         height: 8vh;
@@ -64,6 +68,61 @@
         color: #428CFF;
       }
  }
+
+ @media screen and (orientation: landscape) {
+  #container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7vh;
+    justify-content: space-around;
+  }
+
+  app-battery {
+    padding-left: 15vw;
+  }
+
+  app-button {
+    width: 20vh
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 7vh;
+    font-weight:100;
+    text-align: center;
+    text-transform: uppercase;
+    color: #428CFF;
+  }
+
+  #back {
+    width: 15vh;
+    height: 15vh;
+    --border-radius: 3px;
+    margin-top: 3vh;
+  }
+
+  #hint {
+    width: 15vh;
+    height: 15vh;
+    --border-radius: 3px;
+    margin-left: 170vh;
+    margin-top: 3vh;
+}
+
+.Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+  ion-button {
+    width: 35vh;
+    height: 8vw;
+    --border-radius: 5px;
+  }
+}
 /* Core CSS required for Ionic components to work properly */
 
 @import "~@ionic/angular/css/core.css";
