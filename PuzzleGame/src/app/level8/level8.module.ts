@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BatteryComponent } from '../battery/battery.component';
 import { IonicModule } from '@ionic/angular';
 import { BatteryStatus } from '@ionic-native/battery-status/ngx';
-
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
 import { Level8PageRoutingModule } from './level8-routing.module';
 
@@ -18,6 +18,6 @@ import { Level8Page } from './level8.page';
     Level8PageRoutingModule
   ],
   declarations: [Level8Page,  BatteryComponent],
-  providers: [BatteryStatus]
+  providers: [BatteryStatus, ScreenOrientation]
 })
 export class Level8PageModule {}

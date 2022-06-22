@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
+@media screen and (orientation: portrait) {
 #container {
     display: flex;
     flex-direction: column;
@@ -23,3 +24,30 @@ ion-button{
     --border-radius: 3px;
     margin-top: 3vw;
 }
+}
+
+@media screen and (orientation: landscape) {
+    #container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+        height: 95vh;
+    }
+    
+    ion-button{
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        height: 10vw;
+        width: 10vw;
+        padding: 2vh;
+        --border-radius: 3px;
+    }
+    
+    #back{
+        width: 60vh;
+        height: 25vh;
+        --border-radius: 3px;
+        margin-top: 3vh;
+    }
+    }

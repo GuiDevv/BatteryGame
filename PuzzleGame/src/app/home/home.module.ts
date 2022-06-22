@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { BatteryComponent } from '../battery/battery.component';
 import { HomePageRoutingModule } from './home-routing.module';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, BatteryComponent] 
+  declarations: [HomePage, BatteryComponent],
+  providers: [ScreenOrientation], 
 })
 export class HomePageModule {}

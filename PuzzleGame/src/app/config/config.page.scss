@@ -1,3 +1,6 @@
+
+@media screen and (orientation: portrait) {
+
 #container {
     display: flex;
     flex-direction: column;
@@ -40,3 +43,57 @@ div ion-range {
     width: 40vw;
 }
 
+}
+
+
+@media screen and (orientation: landscape) {
+
+    #container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+        justify-content: space-around;
+        height: 50%;
+    }
+    
+    #Options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        height: 50%;
+    
+    }
+    
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 80vh;
+    }
+    
+    div p {
+        width: 25vh;
+        text-decoration:dashed solid;
+        font-size:larger;
+        text-align: center;
+        align-self: center;
+    }
+    
+    div ion-range {
+        padding: 0;
+    }
+
+    div a {
+        padding-left: 15vw;
+        padding-top: 35vh;
+    }
+    
+    #back{
+        position: botton;
+        height: 8vw;
+        width: 40vh;
+    }
+
+    
+    }

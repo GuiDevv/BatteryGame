@@ -32,7 +32,7 @@ export class Level2Page implements OnInit {
   batteryCount = 0;
 
   ngOnInit() {
-    
+    this.OnScreenRotated();
   }
 
   get UpdateBatteryFunc() {
@@ -75,9 +75,11 @@ export class Level2Page implements OnInit {
   OnScreenRotated(){
     if (this.getCurrentScreenOrientation() == "portrait-primary"){
       this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
     }
     else{
       this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
     }
   }
 }

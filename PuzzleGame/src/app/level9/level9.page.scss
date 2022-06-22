@@ -1,15 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
-  app-battery{
-    padding-bottom: 15vw;
-    padding-top: 0vh;
-  }
+  @media screen and (orientation: portrait) {
+    
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
 
-  app-button{
-    padding-top: 6vh;
-    padding-bottom: 6vh;
+    app-battery{
+      padding-bottom: 15vw;
+      padding-top: 0vh;
+    }
+  
+    app-button{
+      padding-top: 6vh;
+      padding-bottom: 6vh;
+      align-self: center;
+    }
+  
+    ion-range{
+      padding-top: 5vh;
+    }
+    
+    #Config{
+      display: flex;
+      flex-direction: column;  
+      width: 100%;    
+    }
   }
+  
+  @media screen and (orientation: landscape) {
+    #container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
 
-  ion-range{
-    padding-top: 5vh;
+    #Config{
+      display: flex;
+      flex-direction: column;  
+      width: 30%;    
+    }
+  
+    app-battery {
+      padding: 0;
+      padding-right: 5vw;
+    }
+  
+    ion-range {
+      padding: 0;
+    }
+
+    app-button{
+      padding-top: 6vh;
+      padding-bottom: 6vh;
+      align-self: center;
+    }
+  
+
+  
+    p {
+      font-family: 'Nunito', sans-serif;
+      font-size: 7vh;
+      font-weight:100;
+      width: 20vw;
+      text-align: center;
+      text-transform: uppercase;
+      color: #428CFF;
+    }
+  
+    #Main{
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+    }
   }

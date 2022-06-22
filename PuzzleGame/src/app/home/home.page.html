@@ -3,11 +3,11 @@
     <app-battery [Size] = "Size"></app-battery>
     <ion-grid>
       <ion-row>
-        <ion-col><a routerLink="/level1"><ion-button id="Unique" color="primary"><img src="../../assets/icon/Play.png" style="width: 8vh;"></ion-button></a></ion-col>
+        <ion-col><a routerLink="/level1"><ion-button id="Unique" color="primary"><img src="../../assets/icon/Play.png" [style]="Play"></ion-button></a></ion-col>
       </ion-row>
       <ion-row>
-        <ion-col><a routerLink="/levels"><ion-button><img src="../../assets/icon/Menu.png" style="width: 5vh"></ion-button></a></ion-col>
-        <ion-col><a routerLink="/config"><ion-button><img src="../../assets/icon/Config.png" style="width: 5vh;"></ion-button></a></ion-col>
+        <ion-col><a routerLink="/levels"><ion-button><img src="../../assets/icon/Menu.png" [style]="Next"></ion-button></a></ion-col>
+        <ion-col><a routerLink="/config"><ion-button><img src="../../assets/icon/Config.png" [style]="Next"></ion-button></a></ion-col>
       </ion-row>
     </ion-grid>
   </div>

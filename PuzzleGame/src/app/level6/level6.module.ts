@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BatteryComponent } from '../battery/battery.component';
 import { ButtonComponent } from '../button/button.component';
-
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 import { IonicModule } from '@ionic/angular';
 
 import { Level6PageRoutingModule } from './level6-routing.module';
@@ -17,6 +17,7 @@ import { Level6Page } from './level6.page';
     IonicModule,
     Level6PageRoutingModule
   ],
-  declarations: [Level6Page, BatteryComponent, ButtonComponent]
+  declarations: [Level6Page, BatteryComponent, ButtonComponent],
+  providers: [ScreenOrientation],
 })
 export class Level6PageModule {}

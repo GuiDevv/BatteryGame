@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LevelService } from '../level.service';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
 @Component({
   selector: 'app-levels',
@@ -18,11 +19,20 @@ export class LevelsPage implements OnInit {
   levelUnlocked8;
   levelUnlocked9;
 
-  constructor(private levelService:LevelService) { }
+  constructor(private levelService:LevelService, private screenOrientation: ScreenOrientation) {
+    this.screenOrientation.onChange().subscribe(
+      () => {
+          this.OnScreenRotated();
+      }
+   );
+   }
 
-  ngOnInit() {
+   Size = "width: 15vw;"
+   
+   ngOnInit() {
     this.getCompleted();
-  }
+     this.OnScreenRotated();
+   }
 
   getCompleted(){
     this.levelUnlocked1 = this.levelService.getCompleted(0);
@@ -34,5 +44,19 @@ export class LevelsPage implements OnInit {
     this.levelUnlocked7 = this.levelService.getCompleted(6);
     this.levelUnlocked8 = this.levelService.getCompleted(7);
     this.levelUnlocked9 = this.levelService.getCompleted(8);
+  }
+
+  getCurrentScreenOrientation(){
+    return this.screenOrientation.type;
+  }
+
+  OnScreenRotated(){
+    if (this.getCurrentScreenOrientation() == "portrait-primary"){
+      this.Size =  "width: 15vw";
+    }
+    else{
+      this.Size =  "width: 15vh";
+    }
+
   }
 }

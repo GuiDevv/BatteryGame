@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Button } from 'protractor';
 import { BatteryComponent } from '../battery/battery.component';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 import { LevelService } from '../level.service';
 
 @Component({
@@ -10,7 +11,13 @@ import { LevelService } from '../level.service';
 })
 export class Level9Page implements OnInit {
 
-  constructor(private levelService:LevelService) { }
+  constructor(private levelService:LevelService, private screenOrientation: ScreenOrientation) { 
+    this.screenOrientation.onChange().subscribe(
+      () => {
+          this.OnScreenRotated();
+      }
+   );
+  }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -21,6 +28,7 @@ export class Level9Page implements OnInit {
   LevelCompleted = false;
   Button = "display: none;"
   Info = "display: block;"
+  Next = "style: width: 5vh;"
   batteryCount = 0;
 
   leverLevel;
@@ -28,6 +36,7 @@ export class Level9Page implements OnInit {
 
   ngOnInit() {
     this.rightCharge = Math.ceil(Math.random() * (9 - 1) + 1);
+    this.OnScreenRotated();
   }
 
   get UpdateBatteryFunc() {
@@ -58,5 +67,21 @@ export class Level9Page implements OnInit {
 
   UnlockLevel(level){
     this.levelService.unlockLevel(level);
+  }
+
+  getCurrentScreenOrientation(){
+    return this.screenOrientation.type;
+  }
+
+  OnScreenRotated(){
+    if (this.getCurrentScreenOrientation() == "portrait-primary"){
+      this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
+    }
+    else{
+      this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
+    }
+
   }
 }

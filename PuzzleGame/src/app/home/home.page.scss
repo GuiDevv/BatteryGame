@@ -2,6 +2,8 @@ ion-content{
   margin: 0;
 }
 
+@media screen and (orientation: portrait) {
+
 #container {
   display: flex;
   flex-direction: column;
@@ -19,4 +21,30 @@ ion-button{
   width: 100%;
   --border-radius: 3px;
 }
+}
 
+@media screen and (orientation: landscape) {
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    padding-top: 15vh;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  app-battery{
+    padding-right: 10vw;
+  }
+  
+  ion-button{
+    height: 9vw;
+    width: 100%;
+    --border-radius: 3px;
+  }
+
+  ion-row {
+    width: 50%;
+  }
+  }

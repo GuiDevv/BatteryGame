@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 import { ConfigPageRoutingModule } from './config-routing.module';
 
 import { ConfigPage } from './config.page';
@@ -15,6 +15,7 @@ import { ConfigPage } from './config.page';
     IonicModule,
     ConfigPageRoutingModule
   ],
-  declarations: [ConfigPage]
+  declarations: [ConfigPage],
+  providers: [ScreenOrientation], 
 })
 export class ConfigPageModule {}

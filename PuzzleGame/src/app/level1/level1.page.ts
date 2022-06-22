@@ -28,10 +28,11 @@ export class Level1Page implements OnInit {
   LevelCompleted = false;
   Button = "display: none;"
   Info = "display: block;"
+  Next = "style: width: 5vh;"
   batteryCount = 0;
 
   ngOnInit() {
-    
+    this.OnScreenRotated();
   }
 
   get UpdateBatteryFunc() {
@@ -67,9 +68,12 @@ export class Level1Page implements OnInit {
   OnScreenRotated(){
     if (this.getCurrentScreenOrientation() == "portrait-primary"){
       this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
     }
     else{
       this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
     }
+
   }
 }

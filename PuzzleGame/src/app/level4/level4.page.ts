@@ -39,6 +39,7 @@ export class Level4Page implements OnInit {
   finished:boolean = true;
 
   ngOnInit() {
+    this.OnScreenRotated();
   }
 
   get UpdateBatteryFunc() {

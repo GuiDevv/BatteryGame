@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BatteryComponent } from '../battery/battery.component';
 import { Shake } from '@ionic-native/shake/ngx';
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 import { Platform } from '@ionic/angular';
 import { LevelService } from '../level.service';
 
@@ -12,7 +13,7 @@ import { LevelService } from '../level.service';
 })
 export class Level7Page implements OnInit {
 
-  constructor(private levelService:LevelService, private shake:Shake, private plataform:Platform, private vibration: Vibration) { 
+  constructor(private levelService:LevelService, private shake:Shake, private plataform:Platform, private vibration: Vibration, private screenOrientation: ScreenOrientation) { 
     this.plataform.ready().then( () => {
       this.shake.startWatch(this.sensitive).subscribe( data => {
         this.UpdateBattery();
@@ -20,6 +21,11 @@ export class Level7Page implements OnInit {
         navigator.vibrate(1000);
       })
     })
+    this.screenOrientation.onChange().subscribe(
+      () => {
+          this.OnScreenRotated();
+      }
+   );
   }
 
   @ViewChild (BatteryComponent) battery:BatteryComponent;
@@ -31,11 +37,13 @@ export class Level7Page implements OnInit {
   LevelCompleted = false;
   Button = "display: none;"
   Info = "display: block;"
+  Next = "style: width: 5vh;"
   batteryCount = 0;
 
   sensitive = 40;
 
   ngOnInit() {
+    this.OnScreenRotated();
   }
 
   get UpdateBatteryFunc() {
@@ -69,5 +77,21 @@ export class Level7Page implements OnInit {
 
   UnlockLevel(level){
     this.levelService.unlockLevel(level);
+  }
+
+  getCurrentScreenOrientation(){
+    return this.screenOrientation.type;
+  }
+
+  OnScreenRotated(){
+    if (this.getCurrentScreenOrientation() == "portrait-primary"){
+      this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
+    }
+    else{
+      this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
+    }
+
   }
 }

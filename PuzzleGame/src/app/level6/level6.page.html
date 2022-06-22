@@ -4,6 +4,7 @@
   <a routerLink="/hint"><ion-button id="hint" (click)="SetCurrentLevel(6)"><img src="../../assets/icon/Hint.png" style="width: 10vh;"></ion-button></a>
   </div>  
   
+  <div id="Main">
   <ion-range min="0" max="10" [(ngModel)]="leverLevel" (ionKnobMoveEnd)="sliderLastChange()" step="1" value="0" snaps color="primary">
     <ion-icon slot="start" size="small" color="primary"></ion-icon>
     <ion-icon slot="end" color="primary"></ion-icon>
@@ -11,6 +12,7 @@
   <div id="container">
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Mais preciso agora</p>
-    <a routerLink="/level7"><ion-button [style]="Button" (click)="UnlockLevel(7)"><img src="../../assets/icon/Play.png" style="width: 5vh;"></ion-button></a>
+    <a routerLink="/level7"><ion-button [style]="Button" (click)="UnlockLevel(7)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
+  </div>
   </div>
   </ion-content>

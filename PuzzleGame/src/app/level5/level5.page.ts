@@ -31,6 +31,15 @@ export class Level5Page implements OnInit {
 
   ngOnInit() {
     this.getCurrentScreenOrientation();
+    
+    if (this.getCurrentScreenOrientation() == "portrait-primary"){
+      this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
+    }
+    else{
+      this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
+    }
   }
 
   get UpdateBatteryFunc() {

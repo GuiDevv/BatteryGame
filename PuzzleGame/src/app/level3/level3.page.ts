@@ -30,6 +30,7 @@ export class Level3Page implements OnInit {
   LevelCompleted = false;
   Button = "display: none;"
   Info = "display: block;"
+  Next = "style: width: 5vh;"
   batteryCount = 0;
 
   counter = 0;
@@ -37,7 +38,7 @@ export class Level3Page implements OnInit {
   name:String;
 
   ngOnInit() {
-    
+    this.OnScreenRotated();
   }
 
   get PressedFunctionFunc() {
@@ -91,9 +92,11 @@ export class Level3Page implements OnInit {
   OnScreenRotated(){
     if (this.getCurrentScreenOrientation() == "portrait-primary"){
       this.Size =  "width: 60vw";
+      this.Next = "width: 5vh";
     }
     else{
       this.Size =  "width: 60vh";
+      this.Next = "width: 5vw";
     }
   }
 }
