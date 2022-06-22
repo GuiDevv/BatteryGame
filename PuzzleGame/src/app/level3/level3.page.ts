@@ -4,6 +4,7 @@ import { BatteryComponent } from '../battery/battery.component';
 import { interval } from 'rxjs';
 import { ButtonComponent } from '../button/button.component';
 import { LevelService } from '../level.service';
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
 @Component({
   selector: 'app-level3',
@@ -12,7 +13,13 @@ import { LevelService } from '../level.service';
 })
 export class Level3Page implements OnInit {
 
-  constructor(private levelService:LevelService) { }
+  constructor(private levelService:LevelService, private screenOrientation: ScreenOrientation) { 
+    this.screenOrientation.onChange().subscribe(
+      () => {
+          this.OnScreenRotated();
+      }
+   );
+  }
 
   @ViewChild(BatteryComponent) battery:BatteryComponent;
 
@@ -75,5 +82,18 @@ export class Level3Page implements OnInit {
 
   UnlockLevel(level){
     this.levelService.unlockLevel(level);
+  }
+
+  getCurrentScreenOrientation(){
+    return this.screenOrientation.type;
+  }
+
+  OnScreenRotated(){
+    if (this.getCurrentScreenOrientation() == "portrait-primary"){
+      this.Size =  "width: 60vw";
+    }
+    else{
+      this.Size =  "width: 60vh";
+    }
   }
 }
