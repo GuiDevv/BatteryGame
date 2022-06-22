@@ -4,13 +4,16 @@
     <a routerLink="/hint"><ion-button id="hint" (click)="SetCurrentLevel(4)"><img src="../../assets/icon/Hint.png" style="width: 10vh;"></ion-button></a>
   </div>  
   
-  <ion-range min="0" max="9" [(ngModel)]="leverLevel" (ionChange)="sliderLastChange()" step="1" value="0" snaps color="primary">
-    <ion-icon slot="start" size="small" color="primary"></ion-icon>
-    <ion-icon slot="end" color="primary"></ion-icon>
-  </ion-range>
-  <div id="container">
-    <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
-    <p [style]="Info">Agora deve ir até o fim</p>
-    <a routerLink="/level5"><ion-button [style]="Button" (click)="UnlockLevel(5)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
+  <div id="Main">
+    <ion-range min="0" max="9" [(ngModel)]="leverLevel" (ionChange)="sliderLastChange()" step="1" value="0" snaps color="primary">
+      <ion-icon slot="start" size="small" color="primary"></ion-icon>
+      <ion-icon slot="end" color="primary"></ion-icon>
+    </ion-range>
+    <div id="container">
+      <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
+      <p [style]="Info">Agora deve ir até o fim</p>
+      <a routerLink="/level5"><ion-button [style]="Button" (click)="UnlockLevel(5)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
+    </div>
   </div>
+  
   </ion-content>
