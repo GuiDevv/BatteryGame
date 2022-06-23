@@ -13,7 +13,7 @@
 </div>   
     <app-battery [Size]="Size" [UseBatteryOpacity]="UseBatteryOpacity" [UseChargeOpacity]="UseChargeOpacity"></app-battery>
     <p [style]="Info">Encontre o valor: {{rightCharge}}</p>
-    <a routerLink="/home"><ion-button [style]="Button"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
+    <a routerLink="/level5"><ion-button [style]="Button" (click)="UnlockLevel(7)"><img src="../../assets/icon/Play.png" [style]="Next"></ion-button></a>
   </div>
 </ion-content>
   
