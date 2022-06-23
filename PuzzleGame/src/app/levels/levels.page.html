@@ -1,49 +1,51 @@
 <ion-content>
   <div id="container">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/level1" *ngIf="levelUnlocked1"><ion-button (click)="setCurrentLevel(1)">1</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked1">1</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level2" *ngIf="levelUnlocked2"><ion-button (click)="setCurrentLevel(2)">2</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked2">2</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level3" *ngIf="levelUnlocked3"><ion-button (click)="setCurrentLevel(3)">3</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked3">3</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/level4" *ngIf="levelUnlocked4"><ion-button (click)="setCurrentLevel(4)">4</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked4">4</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level6" *ngIf="levelUnlocked5"><ion-button (click)="setCurrentLevel(5)">5</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked5">5</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level9" *ngIf="levelUnlocked6"><ion-button (click)="setCurrentLevel(6)">6</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked6">6</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/level5" *ngIf="levelUnlocked7"><ion-button (click)="setCurrentLevel(7)">7</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked7">7</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level7" *ngIf="levelUnlocked8"><ion-button (click)="setCurrentLevel(8)">8</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked8">8</ion-button>
-        </ion-col>
-        <ion-col>
-          <a routerLink="/level8" *ngIf="levelUnlocked9"><ion-button (click)="setCurrentLevel(9)">9</ion-button></a>
-          <ion-button color="medium" *ngIf="!levelUnlocked9">9</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div id="levels">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <a routerLink="/level1" *ngIf="levelUnlocked1"><ion-button (click)="setCurrentLevel(1)">1</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked1">1</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level2" *ngIf="levelUnlocked2"><ion-button (click)="setCurrentLevel(2)">2</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked2">2</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level3" *ngIf="levelUnlocked3"><ion-button (click)="setCurrentLevel(3)">3</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked3">3</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <a routerLink="/level4" *ngIf="levelUnlocked4"><ion-button (click)="setCurrentLevel(4)">4</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked4">4</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level6" *ngIf="levelUnlocked5"><ion-button (click)="setCurrentLevel(5)">5</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked5">5</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level9" *ngIf="levelUnlocked6"><ion-button (click)="setCurrentLevel(6)">6</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked6">6</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <a routerLink="/level5" *ngIf="levelUnlocked7"><ion-button (click)="setCurrentLevel(7)">7</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked7">7</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level7" *ngIf="levelUnlocked8"><ion-button (click)="setCurrentLevel(8)">8</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked8">8</ion-button>
+          </ion-col>
+          <ion-col>
+            <a routerLink="/level8" *ngIf="levelUnlocked9"><ion-button (click)="setCurrentLevel(9)">9</ion-button></a>
+            <ion-button color="medium" *ngIf="!levelUnlocked9">9</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
     <a routerLink="/home"><ion-button id="back"><img src="../../assets/icon/Back.png" [style]="Size"></ion-button></a>
   </div>
 </ion-content>
